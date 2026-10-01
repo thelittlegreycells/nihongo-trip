@@ -68,6 +68,76 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.025em; }
 .boot-screen span { display: block; margin-top: 6px; color: var(--ink-soft); }
 .boot-error { max-width: 420px; padding: 24px; border: 2px solid var(--red); border-radius: 18px; background: #fff; }
 
+.passcode-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 5vw, 64px);
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(239, 188, 114, .28), transparent 25rem),
+    radial-gradient(circle at 88% 82%, rgba(103, 161, 134, .22), transparent 28rem),
+    linear-gradient(145deg, #0b2f27 0%, #17483b 52%, #102f28 100%);
+}
+.passcode-page::before {
+  content: '旅';
+  position: absolute;
+  z-index: -2;
+  right: -7vw;
+  bottom: -19vw;
+  color: rgba(255,255,255,.035);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: min(68vw, 850px);
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+.passcode-backdrop { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.passcode-backdrop i { position: absolute; display: block; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; }
+.passcode-backdrop i:nth-child(1) { width: 290px; height: 290px; left: -105px; bottom: 8%; }
+.passcode-backdrop i:nth-child(2) { width: 190px; height: 190px; right: 10%; top: -76px; }
+.passcode-backdrop i:nth-child(3) { width: 88px; height: 88px; right: 18%; bottom: 15%; background: rgba(239,188,114,.08); }
+.passcode-card {
+  width: min(100%, 520px);
+  padding: clamp(27px, 5vw, 48px);
+  position: relative;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 30px;
+  background: rgba(255,253,248,.97);
+  box-shadow: 0 34px 90px rgba(0,0,0,.32);
+  animation: passcodeIn 420ms cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes passcodeIn { from { opacity: 0; transform: translateY(14px) scale(.985); } to { opacity: 1; transform: none; } }
+.passcode-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 35px; }
+.passcode-brand > span:last-child { min-width: 0; }
+.passcode-mark { width: 48px; height: 48px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 15px; background: var(--green); color: #fff; font-size: 1.55rem; font-weight: 850; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+.passcode-brand strong, .passcode-brand small { display: block; }
+.passcode-brand strong { letter-spacing: -.02em; }
+.passcode-brand small { margin-top: 1px; color: var(--ink-soft); font-size: .72rem; letter-spacing: .035em; }
+.passcode-copy h1 { margin-bottom: 12px; font-size: clamp(2.2rem, 7vw, 3.55rem); letter-spacing: -.055em; }
+.passcode-copy p { max-width: 410px; margin-bottom: 28px; }
+.passcode-form label { display: block; margin-bottom: 8px; font-size: .78rem; font-weight: 810; letter-spacing: .02em; }
+.passcode-input-wrap { height: 72px; position: relative; border: 2px solid var(--line-strong); border-radius: 17px; background: #fff; transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+.passcode-input-wrap:focus-within { border-color: var(--green); box-shadow: 0 0 0 4px rgba(23,72,59,.12); }
+.passcode-input-wrap.has-error { border-color: var(--red); background: #fffafa; }
+.passcode-input-wrap.is-locked { background: #f0eee7; }
+.passcode-input-wrap input { width: 100%; height: 100%; position: relative; z-index: 2; border: 0; outline: 0; border-radius: inherit; background: transparent; color: transparent; caret-color: transparent; text-align: center; font-size: 2rem; letter-spacing: .5em; }
+.passcode-lock { position: absolute; z-index: 3; left: 19px; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid #c8d7cd; border-radius: 10px; background: var(--mint); color: var(--green); font-size: .48rem; pointer-events: none; }
+.passcode-dots { position: absolute; z-index: 1; inset: 0; display: flex; align-items: center; justify-content: center; gap: 18px; pointer-events: none; }
+.passcode-dots span { width: 14px; height: 14px; border: 2px solid #9ea9a4; border-radius: 50%; background: transparent; transition: transform 140ms ease, background 140ms ease, border-color 140ms ease; }
+.passcode-dots span.filled { transform: scale(1.08); border-color: var(--green); background: var(--green); }
+.passcode-help { margin-top: 9px; color: var(--ink-soft); font-size: .72rem; }
+.passcode-error { min-height: 24px; margin-top: 9px; color: var(--red-deep); font-size: .78rem; font-weight: 720; opacity: 0; }
+.passcode-error.visible { opacity: 1; }
+.passcode-submit { width: 100%; min-height: 54px; margin-top: 10px; background: var(--green); color: #fff; box-shadow: 0 12px 28px rgba(23,72,59,.22); }
+.passcode-submit:hover:not(:disabled) { background: var(--green-deep); box-shadow: 0 16px 34px rgba(23,72,59,.28); }
+.passcode-submit span { margin-left: auto; }
+.passcode-footer { margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 9px; color: var(--ink-soft); font-size: .73rem; }
+.passcode-footer > span:first-child { color: var(--green); }
+
 .app-shell { min-height: 100vh; padding-bottom: 96px; }
 .main-content { width: min(100%, 1440px); margin: 0 auto; }
 .page { padding: 38px clamp(18px, 4vw, 64px) 64px; animation: pageIn 280ms ease both; }
@@ -390,6 +460,14 @@ ruby rt { padding-top: 3px; color: var(--ink-soft); font-size: .4em; font-weight
 
 @media (max-width: 680px) {
   :root { --radius-xl: 23px; --radius-lg: 17px; }
+  .passcode-page { padding: 13px; place-items: center; }
+  .passcode-card { padding: 25px 20px; border-radius: 24px; }
+  .passcode-brand { margin-bottom: 27px; }
+  .passcode-copy h1 { font-size: 2.55rem; }
+  .passcode-copy p { margin-bottom: 23px; font-size: .9rem; }
+  .passcode-input-wrap { height: 66px; }
+  .passcode-dots { gap: 15px; }
+  .passcode-footer { align-items: flex-start; }
   .app-shell { padding-bottom: 88px; }.app-header { height: 66px; padding-inline: 14px; }.brand-mark { width: 38px; height: 38px; border-radius: 12px; }.brand-subtitle, .status-pill, .streak-pill { display: none; }.header-actions { gap: 5px; }.header-search { width: 39px; height: 39px; }
   .page { padding: 22px 14px 45px; }.page-title-row { display: block; margin-bottom: 22px; }.page-title-row h1 { font-size: 2.4rem; }.page-title-row .button { width: 100%; margin-top: 16px; }
   .bottom-nav { bottom: 8px; width: calc(100% - 16px); min-height: 64px; padding: 6px; border-radius: 20px; }.bottom-nav button { min-height: 51px; font-size: .61rem; }.nav-icon { font-size: 1.12rem; }

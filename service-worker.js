@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nihongo-trip-v1.4.0';
+const CACHE_NAME = 'nihongo-trip-v1.5.0';
 const CORE = [
   './', './index.html', './styles.css', './bootstrap.js', './app.js',
   './manifest.webmanifest', './vendor/react-lite.js', './vendor/react-dom-lite.js',
