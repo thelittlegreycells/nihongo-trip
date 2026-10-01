@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0d342b"/>
+  <circle cx="385" cy="126" r="70" fill="#d6533d"/>
+  <path d="M82 372c92-89 178-108 348-67" fill="none" stroke="#efbc72" stroke-width="18" stroke-linecap="round" opacity=".9"/>
+  <circle cx="100" cy="370" r="15" fill="#efbc72"/>
+  <circle cx="430" cy="305" r="15" fill="#efbc72"/>
+  <text x="256" y="326" text-anchor="middle" font-size="244" font-weight="800" font-family="serif" fill="#fffdf8">旅</text>
+</svg>

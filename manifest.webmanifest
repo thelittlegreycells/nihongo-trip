@@ -1,0 +1,55 @@
+{
+  "name": "Nihongo Trip — Japanese for Travelers",
+  "short_name": "Nihongo Trip",
+  "description": "Practical Japanese phrases with component breakdowns, listening practice, and travel scenarios for a trip to Japan.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f6f3ea",
+  "theme_color": "#0d342b",
+  "lang": "en",
+  "categories": [
+    "education",
+    "travel"
+  ],
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Find a phrase",
+      "short_name": "Search",
+      "url": "./?preview=1#search",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Emergency phrases",
+      "short_name": "Emergency",
+      "url": "./?preview=1#emergency",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
